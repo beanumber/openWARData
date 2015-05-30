@@ -54,6 +54,32 @@
 #' 
 "fWAR"
 
+#' rWAR values downloaded from Baseball-Reference.com
+#' 
+#' A dataset containing rWAR values
+#' 
+#' @format A data frame with one row for each player-season and 15 columns:
+#' \describe{
+#'    \item{playerId}{the Lahman id of the player}
+#'    \item{yearId}{the season}
+#'    \item{stintId}{the stint}
+#'    \item{PA}{the number of plate appearances}
+#'    \item{runs_position}{?}
+#'    \item{rRAA_bat}{the Runs Above Average earned while batting and running the bases}
+#'    \item{rRAA_field}{the Runs Above Average earned while fielding}
+#'    \item{BFP}{the number of batters faced}
+#'    \item{rRAA_pitch}{the Runs Above Average earned while pitching}
+#'    \item{TPA}{the sum of PA and BFP}
+#'    \item{rRAR}{the Runs Above Replacement}
+#'    \item{rRAA}{the Runs Above Average}
+#'    \item{rRepl}{the replacement level, in runs}
+#'    \item{teamId}{the team's ID}
+#' }
+#' 
+#' @source \url{http://baseball-reference.com/}
+#' 
+"rWAR"
+
 #' Play-by-play information downloaded from MLBAM GameDay.
 #' 
 #' A dataset containing play-by-play data from MLBAM GameDay and processed by 
