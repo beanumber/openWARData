@@ -1,4 +1,4 @@
-
+library(dplyr)
 
 bp.ids <- read.csv("http://www.baseballprospectus.com/sortable/playerids/playerid_list.csv")
 names(bp.ids) <- c("nameLast", "nameFirst", "bpId", "davenportId", "mlbamId", "retroId")

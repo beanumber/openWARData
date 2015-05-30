@@ -18,6 +18,19 @@
 #' 
 "idTT"
 
+#' ID table from Baseball-Reference.com
+#' 
+#' A data frame contains player ID mappings
+#' 
+#' @format A data frame with one row for each player and 9 columns:
+#' \describe{
+#'    \item{retroID}{the person's Retrosheet id}
+#' }
+#' 
+#' @source \url{http://www.baseballprospectus.com/sortable/playerids/playerid_list.csv}
+#' 
+"idBP"
+
 #' fWAR values downloaded from FanGraphs.
 #' 
 #' A dataset containing fWAR values
