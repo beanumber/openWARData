@@ -1,3 +1,23 @@
+#' ID table from Ted Turocy's Chadwick Bureau
+#' 
+#' A data frame contains player ID mappings
+#' 
+#' @format A data frame with one row for each player and 9 columns:
+#' \describe{
+#'    \item{key_person}{Ted's ID for that person}
+#'    \item{key_mlbam}{the person's MLBAM id}
+#'    \item{key_retro}{the person's Retrosheet id}
+#'    \item{key_bbref}{the person's Lahman id}
+#'    \item{key_fangraphs}{the person's FanGraphs id}
+#'    \item{name_last}{the person's last name}
+#'    \item{name_first}{the person's first name}
+#'    \item{name_given}{the person's given name}
+#' }
+#' 
+#' @source \url{http://chadwick-bureau.com/the-register/}
+#' 
+"idTT"
+
 #' fWAR values downloaded from FanGraphs.
 #' 
 #' A dataset containing fWAR values
