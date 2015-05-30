@@ -12,36 +12,51 @@ vignette: >
 
 ## Cross-check our WAR with bbref
 
-```{r}
+```{r, message=FALSE}
 library(openWAR)
 library(openWARData)
+library(mosaic)
 ```
 
-```{r, eval=FALSE}
-rWAR = getrWAR()
-rWAR2012 = subset(rWAR, yearId == 2012)
+```{r}
+data(rWAR)
+rWAR2012 <- filter(rWAR, yearId == 2012)
+```
 
-ids = getIDMap()
+```{r}
+data(idTT)
+WAR <- merge(x=rWAR2012, y=idTT, by.x="playerId", by.y="key_bbref")
+data(openWAR.2012)
+WAR <- merge(x=WAR, y=openWAR.2012, by.x="key_mlbam", by.y="playerId")
+```
 
-data(idmap)
-WAR = merge(x=rWAR2012, y=ids, by.x="playerId", by.y="playerID")
-WAR = merge(x=WAR, y=players, by.x="mlbamId", by.y="batterId")
-
+```{r, fig.width=6, fig.height=6}
 panel.compare = function (x, y,...) {
   panel.xyplot(x,y, pch=19, alpha=0.3, ...)
   panel.abline(0,1, col="darkgray")
   panel.text(0, 0, paste("Correlation =", round(cor(x,y, use="complete.obs"), 3)))
 }
 
-xyplot(RAA_bat ~ RAA.bat, data=WAR, type=c("p", "r", "smooth")
+xyplot(WAR ~ rWAR, data=WAR, type=c("p", "r", "smooth")
        , panel=panel.compare
        , main="Comparison of openWAR vs. rWAR, 2012"
-       , xlab = "Batting Runs Above Average (openWAR)", ylab="Batting Runs Above Average (rWAR)")
-
-with(WAR, cor(RAA_bat, RAA.bat))
-
-favstats(~RAA.bat, data=players)
-favstats(~RAA_bat, data=rWAR2012)
-densityplot(~RAA_bat, data=rWAR2012)
-ladd(panel.densityplot(players$RAA.bat, col="pink"))
+       , ylab = "Wins Above Replacement (openWAR)"
+       , xlab="Wins Above Replacement (rWAR)"
+       )
 ```
+
+```{r, fig.width=6}
+cor(WAR ~ rWAR, data=WAR)
+
+favstats(~WAR, data=WAR)
+favstats(~rWAR, data=WAR)
+densityplot(~WAR + rWAR, data=WAR)
+```
+
+```{r}
+sum(~RAA, data=WAR)
+sum(~rRAA, data=WAR)
+sum(~WAR, data=WAR)
+sum(~rWAR, data=WAR)
+```
+
