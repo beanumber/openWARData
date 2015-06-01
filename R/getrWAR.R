@@ -6,8 +6,7 @@
 #' 
 #' @return a data.frame consisting of rWAR
 #' 
-#' @importFrom dplyr mutate
-#' @importFrom dplyr rename
+#' @import dplyr
 #' @export
 #' @examples
 #' 
