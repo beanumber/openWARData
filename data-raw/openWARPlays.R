@@ -10,12 +10,15 @@ madeWAR <- makeWAR(MLBAM2012)
 # Less than half the size of the raw data
 print(object.size(madeWAR), units = "Mb")
 # extract just the data frame
-openWARPlays.2012 <- madeWAR$openWAR
-save(openWARPlays.2012, file="data/openWARPlays.2012.rda")
+openWARPlays2012 <- madeWAR$openWAR
+save(openWARPlays2012, file="data/openWARPlays2012.rda")
 
 
-openWARPlays.2013 <- makeWAR(MLBAM2013)$openWAR
-save(openWARPlays.2013, file="data/openWARPlays.2013.rda")
+openWARPlays2013 <- makeWAR(MLBAM2013)$openWAR
+save(openWARPlays2013, file="data/openWARPlays2013.rda")
 
-openWARPlays.2014 <- makeWAR(MLBAM2014)$openWAR
-save(openWARPlays.2014, file="data/openWARPlays.2014.rda")
+openWARPlays2014 <- makeWAR(MLBAM2014)$openWAR
+save(openWARPlays2014, file="data/openWARPlays2014.rda")
+
+openWARPlays2015 <- makeWAR(MLBAM2015)$openWAR
+save(openWARPlays2015, file="data/openWARPlays2015.rda")
