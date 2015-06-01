@@ -7,8 +7,8 @@
 library(openWARData)
 library(dplyr)
 
-bat = read.csv(system.file("extdata", "FanGraphs_2005-2013_batting.csv", package = "openWARData"))
-pitch = read.csv(system.file("extdata", "FanGraphs_2005-2013_pitching.csv", package = "openWARData"))
+bat = read.csv(system.file("extdata", "FanGraphs_1871-2014_batting.csv", package = "openWARData"))
+pitch = read.csv(system.file("extdata", "FanGraphs_1871-2014_pitching.csv", package = "openWARData"))
 out = merge(x=bat, y=pitch, by = c("playerid", "Season"), all=TRUE)
 
 fWAR <- out %>%
