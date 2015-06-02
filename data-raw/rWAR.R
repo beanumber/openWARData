@@ -2,4 +2,4 @@ library(openWARData)
 
 # BB-Ref updates their figures daily!
 rWAR <- getrWAR()
-save(rWAR, file = "data/rWAR.rda")
+save(rWAR, file = "data/rWAR.rda", compress = "xz")

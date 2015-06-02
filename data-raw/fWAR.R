@@ -25,4 +25,4 @@ fWAR <- out %>%
   select(playerid, yearId, Name, fWAR, fRAA_bat, fRAA_br, fRAA_field
                , fWAR_pitch, fRAR, fRAA, fRepl)
 
-save(fWAR, file="data/fWAR.rda")
+save(fWAR, file="data/fWAR.rda", compress = "xz")

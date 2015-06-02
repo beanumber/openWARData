@@ -26,8 +26,8 @@ rWAR2012 <- filter(rWAR, yearId == 2012)
 ```{r}
 data(idTT)
 WAR <- merge(x=rWAR2012, y=idTT, by.x="playerId", by.y="key_bbref")
-data(openWAR.2012)
-WAR <- merge(x=WAR, y=openWAR.2012, by.x="key_mlbam", by.y="playerId")
+data(openWAR2012)
+WAR <- merge(x=WAR, y=openWAR2012, by.x="key_mlbam", by.y="playerId")
 ```
 
 ```{r, fig.width=6, fig.height=6}

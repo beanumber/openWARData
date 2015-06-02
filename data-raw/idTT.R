@@ -27,4 +27,4 @@ idTT <- register %>%
 # Examine Mike Trout
 # filter(idTT, name_last == "Trout")
 # save it to the data folder
-save(idTT, file="data/idTT.rda")
+save(idTT, file="data/idTT.rda", compress = "xz")

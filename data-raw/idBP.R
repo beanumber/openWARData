@@ -6,4 +6,4 @@ ids = merge(x = Lahman::Master, y = bp.ids, by.x = "retroID", by.y = "retroId", 
 
 idBP <- filter(ids, !is.na(mlbamId))
  
-save(idBP, file = "data/idBP.rda")
+save(idBP, file = "data/idBP.rda", compress = "xz")
