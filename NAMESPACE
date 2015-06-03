@@ -2,6 +2,10 @@
 
 export(crosscheck)
 export(crosscheck.GameDayPlays)
+export(getfWAR)
 export(getrWAR)
 import(dplyr)
 import(openWAR)
+importFrom(XML,readHTMLTable)
+importFrom(XML,xpathSApply)
+importFrom(scrapeR,scrape)
