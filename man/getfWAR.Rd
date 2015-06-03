@@ -6,6 +6,9 @@
 \usage{
 getfWAR(yyyy)
 }
+\arguments{
+\item{yyyy}{A year}
+}
 \value{
 a data.frame consisting of fWAR
 }

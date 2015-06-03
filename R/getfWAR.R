@@ -4,6 +4,8 @@
 #' 
 #' @details Retrieves yearly fWAR figures from FanGraphs.com and stores it as a data.frame
 #' 
+#' @param yyyy A year
+#' 
 #' @return a data.frame consisting of fWAR
 #' 
 #' @import dplyr
