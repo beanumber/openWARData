@@ -60,11 +60,28 @@ getfWAR = function(yyyy) {
   # append a yearId column to data
   all$yearId = yyyy
   
-  # Download the crunchtimebaseball player id map because it is more current
-  id.map = read.csv("http://crunchtimebaseball.com/master.csv")
-  id = data.frame(Name = id.map$fg_name,  playerId = id.map$fg_id)
-  # Merge all and id to add the FanGraphs player IDs to the data
-  all = merge(all, id, by="Name")
+  # The chadwick player ID map does not cover some newer players so for years 
+  # after 2014 we have to work around this if we want to attach FanGraphs playerId
+  if(yyyy > 2014) {
+  	
+  	# Download the crunchtimebaseball player id map because it is more current
+  	id.map = read.csv("http://crunchtimebaseball.com/master.csv")
+  	id = data.frame(Name = id.map$fg_name,  playerId = id.map$fg_id)
+  	# Merge all and id to add the FanGraphs player IDs to the data
+  	all = merge(all, id, by="Name")
+  	
+  } else {
+  	
+  	data(idTT,envir = environment())
+  	# filter out players without FanGraphs playerId
+  	id = filter(idTT, !is.na(key_fangraphs))
+  	id = data.frame(Name = paste(id$name_first, id$name_last, sep=" "),	playerId = id$key_fangraphs)
+  	# Because the idTT puts a space after period in names with initials and
+  	# Fangraphs does not we have to fix this so they will match
+  	id$Name <- sub("\\. ", ".", id$Name)
+  	all = merge(all, id, by="Name")
+  	
+  }
   
   out = all %>%
     mutate(fRAA_bat = ifelse(is.na(Batting), 0, Batting) + ifelse(is.na(Positional), 0, Positional)) %>%
