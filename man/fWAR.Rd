@@ -13,7 +13,7 @@
    \item{fRAA_bat}{the Runs Above Average earned while batting}
    \item{fRAA_br}{the Runs Above Average earned while running the bases}
    \item{fRAA_field}{the Runs Above Average earned while fielding}
-   \item{fRAA_pitch}{the Runs Above Average earned while pitching}
+   \item{fWAR_pitch}{the Runs Above Average earned while pitching}
    \item{fRAR}{the Runs Above Replacement}
    \item{fRAA}{the Runs Above Average}
    \item{fRepl}{the replacement level, in runs}

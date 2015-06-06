@@ -10,6 +10,7 @@
    \item{key_mlbam}{the person's MLBAM id}
    \item{key_retro}{the person's Retrosheet id}
    \item{key_bbref}{the person's Lahman id}
+   \item{key_bbpro}{the person's Baseball Prospectus id}
    \item{key_fangraphs}{the person's FanGraphs id}
    \item{name_last}{the person's last name}
    \item{name_first}{the person's first name}

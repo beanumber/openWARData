@@ -17,14 +17,18 @@ Retrieves daily rWAR figures from Baseball-Reference.com and stores it as a data
 }
 \examples{
 # Get data from yesterday
-ds = getrWAR()
-mosaic::densityplot(~WAR, data=ds, plot.points=FALSE)
+\dontrun{
+rWAR = getrWAR()
+}
+data(rWAR)
+hist(rWAR$rWAR)
 
 # Leaders since 1954
-modern = subset(ds, yearId >= 1954)
-head(modern[order(modern$WAR, decreasing=TRUE),], 20)
+library(dplyr)
+modern = filter(rWAR, yearId >= 1954)
+head(arrange(modern, desc(rWAR)), 20)
 
 # Relationship between batting and fielding
-xyplot(RAA_field ~ RAA_bat, data=modern, type=c('p', 'r', 'smooth'))
+plot(modern$rRAA_bat, modern$rRAA_field, cex=0.5)
 }
 

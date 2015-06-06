@@ -8,6 +8,7 @@
 #'    \item{key_mlbam}{the person's MLBAM id}
 #'    \item{key_retro}{the person's Retrosheet id}
 #'    \item{key_bbref}{the person's Lahman id}
+#'    \item{key_bbpro}{the person's Baseball Prospectus id}
 #'    \item{key_fangraphs}{the person's FanGraphs id}
 #'    \item{name_last}{the person's last name}
 #'    \item{name_first}{the person's first name}
@@ -44,7 +45,7 @@
 #'    \item{fRAA_bat}{the Runs Above Average earned while batting}
 #'    \item{fRAA_br}{the Runs Above Average earned while running the bases}
 #'    \item{fRAA_field}{the Runs Above Average earned while fielding}
-#'    \item{fRAA_pitch}{the Runs Above Average earned while pitching}
+#'    \item{fWAR_pitch}{the Runs Above Average earned while pitching}
 #'    \item{fRAR}{the Runs Above Replacement}
 #'    \item{fRAA}{the Runs Above Average}
 #'    \item{fRepl}{the replacement level, in runs}
@@ -73,6 +74,7 @@
 #'    \item{rRAR}{the Runs Above Replacement}
 #'    \item{rRAA}{the Runs Above Average}
 #'    \item{rRepl}{the replacement level, in runs}
+#'    \item{rWAR}{the WAR according to Baseball-Reference}
 #'    \item{teamId}{the team's ID}
 #' }
 #' 
@@ -94,6 +96,37 @@
 #' @source \url{http://gd2.mlb.com/}
 #' 
 "MLBAM2012"
+
+#' @rdname MLBAM2012
 "MLBAM2013"
+
+#' @rdname MLBAM2012
 "MLBAM2014"
-"MLABM2015"
+
+#' @rdname MLBAM2012
+"MLBAM2015"
+
+
+#' Play-by-play information downloaded from MLBAM GameDay and processed by openWAR models.
+#' 
+#' A dataset containing play-by-play data from MLBAM GameDay and processed by 
+#' \code{openWAR}.
+#' 
+#' @format A data frame with 184,739 rows and 37 columns:
+#' \describe{
+#'    \item{pitcherId}{the MLBAM id of the pitcher}
+#'    \item{batterId}{the MLBAM id of the batter}
+#' }
+#' 
+#' @source \url{http://gd2.mlb.com/}
+#' 
+"openWARPlays2012"
+
+#' @rdname openWARPlays2012
+"openWARPlays2013"
+
+#' @rdname openWARPlays2012
+"openWARPlays2014"
+
+#' @rdname openWARPlays2012
+"openWARPlays2015"

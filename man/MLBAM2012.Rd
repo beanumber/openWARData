@@ -3,6 +3,9 @@
 \docType{data}
 \name{MLBAM2012}
 \alias{MLBAM2012}
+\alias{MLBAM2013}
+\alias{MLBAM2014}
+\alias{MLBAM2015}
 \title{Play-by-play information downloaded from MLBAM GameDay.}
 \format{A data frame with 184,739 rows and 62 columns:
 \describe{
@@ -14,6 +17,12 @@
 }
 \usage{
 MLBAM2012
+
+MLBAM2013
+
+MLBAM2014
+
+MLBAM2015
 }
 \description{
 A dataset containing play-by-play data from MLBAM GameDay and processed by

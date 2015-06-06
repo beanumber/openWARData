@@ -28,7 +28,7 @@ crosscheck.GameDayPlays = function(data) {
   
   
   lteams <- Lahman::Batting %>% 
-    group_by(yearID, teamID) %>% 
+    group_by_("yearID", "teamID") %>% 
     summarise(PA = sum(AB + BB + HBP + SH + SF, na.rm = TRUE), AB = sum(AB, na.rm = TRUE), 
               R = sum(R, na.rm = TRUE), H = sum(H, na.rm = TRUE), 
               HR = sum(HR, na.rm = TRUE), BB = sum(BB, na.rm = TRUE), 

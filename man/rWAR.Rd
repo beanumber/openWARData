@@ -19,6 +19,7 @@
    \item{rRAR}{the Runs Above Replacement}
    \item{rRAA}{the Runs Above Average}
    \item{rRepl}{the replacement level, in runs}
+   \item{rWAR}{the WAR according to Baseball-Reference}
    \item{teamId}{the team's ID}
 }}
 \source{
