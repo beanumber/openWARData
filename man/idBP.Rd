@@ -6,6 +6,8 @@
 \title{ID table from Baseball-Reference.com}
 \format{A data frame with one row for each player and 9 columns:
 \describe{
+   \item{bats}{}
+   \item{bbrefID}{}
    \item{retroID}{the person's Retrosheet id}
 }}
 \source{
@@ -16,6 +18,9 @@ idBP
 }
 \description{
 A data frame contains player ID mappings
+}
+\seealso{
+\code{\link[Lahman]{Master}}
 }
 \keyword{datasets}
 

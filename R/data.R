@@ -25,10 +25,13 @@
 #' 
 #' @format A data frame with one row for each player and 9 columns:
 #' \describe{
+#'    \item{bats}{}
+#'    \item{bbrefID}{}
 #'    \item{retroID}{the person's Retrosheet id}
 #' }
 #' 
 #' @source \url{http://www.baseballprospectus.com/sortable/playerids/playerid_list.csv}
+#' @seealso \code{\link[Lahman]{Master}}
 #' 
 "idBP"
 

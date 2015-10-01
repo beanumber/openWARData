@@ -7,6 +7,5 @@
 #' @author Ben Baumer and Gregory J. Matthews
 #' 
 #' @docType package
-#' @import openWAR
 #' @name openWARData
 NULL

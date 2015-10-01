@@ -2,9 +2,12 @@
 % Please edit documentation in R/crosscheck.R
 \name{crosscheck}
 \alias{crosscheck}
+\alias{crosscheck.GameDayPlays}
 \title{crosscheck}
 \usage{
 crosscheck(data)
+
+\method{crosscheck}{GameDayPlays}(data)
 }
 \arguments{
 \item{data}{\code{GameDayPlays} data frame}

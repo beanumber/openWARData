@@ -10,9 +10,7 @@
 #' @return The ratio of the Frobenius norm of the matrix of differences to the Frobenius norm of the matrix
 #' defined by the Lahman database. 
 #' 
-#' @import dplyr
 #' @export
-#' @export crosscheck.GameDayPlays
 #' 
 #' @examples
 #' 
@@ -22,24 +20,30 @@
 #' 
 crosscheck = function(data) UseMethod("crosscheck")
 
+#' @rdname crosscheck
+#' @method crosscheck GameDayPlays
+#' @import dplyr
+#' @import openWAR
+#' @export
+
 crosscheck.GameDayPlays = function(data) {
   
-  teams = tabulate(data)
-  
+  teams <- summary(data)
   
   lteams <- Lahman::Batting %>% 
     group_by_("yearID", "teamID") %>% 
-    summarise(PA = sum(AB + BB + HBP + SH + SF, na.rm = TRUE), AB = sum(AB, na.rm = TRUE), 
-              R = sum(R, na.rm = TRUE), H = sum(H, na.rm = TRUE), 
-              HR = sum(HR, na.rm = TRUE), BB = sum(BB, na.rm = TRUE), 
-              K = sum(SO, na.rm = TRUE), BA = sum(H, na.rm = TRUE)/sum(AB, na.rm = TRUE), 
-              OBP = sum(H + BB + HBP, na.rm = TRUE)/sum(AB + BB + HBP + SF, na.rm = TRUE), 
-              SLG = sum(H + X2B + X3B + HR, na.rm = TRUE)/sum(AB, na.rm = TRUE)
+    summarise_(PA = ~sum(AB + BB + HBP + SH + SF, na.rm = TRUE), 
+               AB = ~sum(AB, na.rm = TRUE), 
+               R = ~sum(R, na.rm = TRUE), H = ~sum(H, na.rm = TRUE), 
+              HR = ~sum(HR, na.rm = TRUE), BB = ~sum(BB, na.rm = TRUE), 
+              K = ~sum(SO, na.rm = TRUE), BA = ~sum(H, na.rm = TRUE)/sum(AB, na.rm = TRUE), 
+              OBP = ~sum(H + BB + HBP, na.rm = TRUE)/sum(AB + BB + HBP + SF, na.rm = TRUE), 
+              SLG = ~sum(H + X2B + X3B + HR, na.rm = TRUE)/sum(AB, na.rm = TRUE)
     )
   
   lteams <- merge(x = lteams, y = Lahman::Teams[, c("yearID", "teamID", "G")], by = c("yearID", "teamID"))
-  lteams <- mutate(lteams, teamId = tolower(teamID))
-  lteams <- mutate(lteams, teamId = ifelse(teamId == "laa", "ana", as.character(teamId)))
+  lteams <- mutate_(lteams, teamId = ~tolower(teamID))
+  lteams <- mutate_(lteams, teamId = ~ifelse(teamId == "laa", "ana", as.character(teamId)))
   
   match <- merge(x = teams, y = lteams, by.x = c("yearId", "bat_team"), by.y = c("yearID", "teamId"), all.x = TRUE)
   
