@@ -52,6 +52,6 @@ getrWAR <- function() {
     rWAR <- mutate_(rWAR, rRepl = ~rRAA - rRAR)
     rWAR <- mutate_(rWAR, rWAR = ~ifelse(is.na(WAR.x), 0, WAR.x) + ifelse(is.na(WAR.y), 0, WAR.y))
     rWAR <- mutate_(rWAR, teamId = ~ifelse(is.na(team_ID.x), as.character(team_ID.y), as.character(team_ID.x)))
-    out = rWAR[, setdiff(1:ncol(rWAR), grep("\\.(x|y)", names(rWAR)))]
+    out <- as.tbl(rWAR[, setdiff(1:ncol(rWAR), grep("\\.(x|y)", names(rWAR)))])
     return(out)
 } 

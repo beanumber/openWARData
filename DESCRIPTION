@@ -1,11 +1,11 @@
 Package: openWARData
 Type: Package
 Title: Data Associated with openWAR
-Version: 0.1.1.9002
-Date: 2014-12-22
-Authors@R: c(person("Ben", "Baumer", email = "ben.baumer@gmail.com", role =
-    c("aut", "cre")), person("Gregory", "Matthews", email = "gjm112@gmail.com",
-    role = c("aut")))
+Version: 0.1.1.9003
+Date: 2015-10-03
+Authors@R: c(
+    person("Ben", "Baumer", email = "ben.baumer@gmail.com", role = c("aut", "cre")), 
+    person("Gregory", "Matthews", email = "gjm112@gmail.com", role = c("aut")))
 Maintainer: Ben Baumer <ben.baumer@gmail.com>
 Description: Here, we provide two primary stores of data: 1) data from
     MLBAM GameDay that has been downloaded by the openWAR package; and 2) that 

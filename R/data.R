@@ -23,11 +23,14 @@
 #' 
 #' A data frame contains player ID mappings
 #' 
-#' @format A data frame with one row for each player and 9 columns:
+#' @format A data frame with one row for each player and 31 columns:
 #' \describe{
-#'    \item{bats}{}
-#'    \item{bbrefID}{}
-#'    \item{retroID}{the person's Retrosheet id}
+#'    \item{nameLast}{the person's last name}
+#'    \item{nameFirst}{the person's first name}
+#'    \item{bpId}{the person's Baseball Prospectus id}
+#'    \item{davenportId}{the person's Davenport id}
+#'    \item{mlbamId}{the person's MLBAM id}
+#'    \item{retroId}{the person's Retrosheet id}
 #' }
 #' 
 #' @source \url{http://www.baseballprospectus.com/sortable/playerids/playerid_list.csv}

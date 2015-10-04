@@ -11,7 +11,7 @@ bat = read.csv(system.file("extdata", "FanGraphs_1871-2014_batting.csv", package
 pitch = read.csv(system.file("extdata", "FanGraphs_1871-2014_pitching.csv", package = "openWARData"))
 out = merge(x=bat, y=pitch, by = c("playerid", "Season"), all=TRUE)
 
-fWAR <- out %>%
+fWAR <- as.tbl(out) %>%
   mutate(Name = ifelse(is.na(Name.x), as.character(Name.y), as.character(Name.x))) %>%
   mutate(yearId = Season) %>%
   mutate(fRAA_bat = ifelse(is.na(Batting), 0, Batting) + ifelse(is.na(Positional), 0, Positional)) %>%
