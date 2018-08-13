@@ -6,8 +6,10 @@
 \alias{MLBAM2013}
 \alias{MLBAM2014}
 \alias{MLBAM2015}
+\alias{MLBAM2016}
+\alias{MLBAM2017}
 \title{Play-by-play information downloaded from MLBAM GameDay.}
-\format{A data frame with 184,739 rows and 62 columns:
+\format{A data frame with approximately 180,000 rows (differs from year to year) and 62 columns:
 \describe{
    \item{pitcherId}{the MLBAM id of the pitcher}
    \item{batterId}{the MLBAM id of the batter}

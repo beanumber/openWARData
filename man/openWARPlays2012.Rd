@@ -6,8 +6,10 @@
 \alias{openWARPlays2013}
 \alias{openWARPlays2014}
 \alias{openWARPlays2015}
+\alias{openWARPlays2016}
+\alias{openWARPlays2017}
 \title{Play-by-play information downloaded from MLBAM GameDay and processed by openWAR models.}
-\format{A data frame with 184,739 rows and 37 columns:
+\format{A data frame with approximately 180,000 rows (differs from season to season) and 37 columns:
 \describe{
    \item{pitcherId}{the MLBAM id of the pitcher}
    \item{batterId}{the MLBAM id of the batter}
@@ -23,6 +25,10 @@ openWARPlays2013
 openWARPlays2014
 
 openWARPlays2015
+
+openWARPlays2016
+
+openWARPlays2017
 }
 \description{
 A dataset containing play-by-play data from MLBAM GameDay and processed by 
